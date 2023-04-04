@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yoga Dance</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container-header">
+    <a class="header-logo-link" href="#0">
+      <img src="./sources/img/header/yoga dance little banner.png" class="header-logo" alt="Yoga Dance">
+    </a>
+    <nav class="menu">
+      <ul class="menu-list">
+        <li class="menu-list-item">
+          <a class="menu-link schedule" href="#0">Расписание</a>
+        </li>
+        <li class="menu-list-item">
+          <a class="menu-link" href="#stocksId">Акции</a>
+        </li>
+        <li class="menu-list-item">
+          <a class="menu-link" href="#locationId">Как найти</a>
+        </li>
+        <li class="menu-list-item">
+          <a class="menu-link" href="#0">Связаться</a>
+        </li>
+        <!-- <li class="menu-list-item">
+          <a class="menu-link" href="#0">categories</a>
+        </li>
+        <li class="menu-list-item">
+          <a class="menu-link" href="#0">contact</a>
+        </li> -->
+      </ul>
+    </nav>
+    <h1 class="header-title">Твой путь в мир Йоги и танца</h1>
+  </div>
+</header>
+
+<div class="content-box">
+  <main class="content">
+      <div class="btn-up btn-up_hide"></div>
+      <script>
+        const btnUp = {
+          el: document.querySelector('.btn-up'),
+          show() {
+    // удалим у кнопки класс btn-up_hide
+            this.el.classList.remove('btn-up_hide');
+          },
+          hide() {
+    // добавим к кнопке класс btn-up_hide
+            this.el.classList.add('btn-up_hide');
+          },
+          addEventListener() {
+    // при прокрутке содержимого страницы
+            window.addEventListener('scroll', () => {
+      // определяем величину прокрутки
+              const scrollY = window.scrollY || document.documentElement.scrollTop;
+      // если страница прокручена больше чем на 400px, то делаем кнопку видимой, иначе скрываем
+              scrollY > 400 ? this.show() : this.hide();
+            });
+    // при нажатии на кнопку .btn-up
+            document.querySelector('.btn-up').onclick = () => {
+      // переместим в начало страницы
+            window.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: 'smooth'
+            });
+            }
+          }
+        }
+
+btnUp.addEventListener();        
+      </script>
+      <div class="schedule-open">
+        <div class="open-line"></div>
+        <script> 
+        function scheduleOpen() {
+          if (document.querySelector('.schedule-box').classList.contains('collapse-active')) {
+            document.querySelector('.schedule-box').classList.add('collapse-close')
+            document.querySelector('.schedule-box').classList.remove('collapse-active')
+            
+          } else {
+            document.querySelector('.schedule-box').classList.add('collapse-active')
+            document.querySelector('.schedule-box').classList.remove('collapse-close')
+          }
+        }
+        
+        document.querySelector('.schedule').addEventListener('click', scheduleOpen)
+        document.querySelector('.open-line').addEventListener('click', scheduleOpen)
+        </script>
+        <!-- <img src="./img/line-open.png" class="schedule-image" alt="Фигура человека, идущего вдоль пляжа"> -->
+      </div>
+      <div class="schedule-box">
+        <div class="schedule-image-container">
+          <img src="./sources/img/main/posts/yoga dance little banner.png" class="schedule-image" alt="Банер с надписью Yoga Dance">
+        </div>
+        <div class="schedule-container">
+          <ul class="weekday name">
+            <li class="time-line title">
+              <p class="paragraph">Время\День</p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph">9:00 - 11:00</p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph">12:00 - 14:00</p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph">15:00 - 17:00</p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph">18:00 - 20:00</p>
+            </li>
+          </ul>
+          <ul class="weekday monday">
+            <li class="time-line title">
+              <p class="paragraph">Понедельник</p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph">&#9644;</p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+          </ul>
+          <ul class="weekday tuesday">
+            <li class="time-line title">
+              <p class="paragraph">Вторник</p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph">&#9644;</p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+          </ul>
+          <ul class="weekday wendthday">
+            <li class="time-line title">
+              <p class="paragraph">Среда</p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph">&#9644;</p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+          </ul>
+          <ul class="weekday thusday">
+            <li class="time-line title">
+              <p class="paragraph">Четверг</p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph">&#9644;</p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+          </ul>
+          <ul class="weekday friday">
+            <li class="time-line title">
+              <p class="paragraph">Пятница</p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph">&#9644;</p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+          </ul>
+          <ul class="weekday saturday">
+            <li class="time-line title">
+              <p class="paragraph">Суббота</p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph">&#9644;</p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+          </ul>
+          <ul class="weekday sunday">
+            <li class="time-line title">
+              <p class="paragraph">Воскресенье</p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph">&#9644;</p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+            <li class="time-line">
+              <p class="paragraph"></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <article class="card mission">
+        
+        <!-- <div class="card-image-container">
+          <img src="https://netology-code.github.io/html-2-diploma/sources/images/last-post1.jpg" class="card-image" alt="Фигура человека, идущего вдоль пляжа">
+        </div> -->
+        
+        <div class="card-container">
+          
+          <header class="card-header">
+            <ul class="card-tags-list">
+              <li class="card-tags-list-item">
+                <a class="card-tags-link" href="#0">Наша миссия</a>
+              </li>
+              <!-- <li class="card-tags-list-item">
+                <a class="card-tags-link" href="#0">Health</a>
+              </li> -->
+            </ul>
+            <h2 class="card-name">
+              <a class="card-name-link" href="#0">Почему твоя жизнь измениться занимаясь Йогой и Танцами</a>
+            </h2>
+            <!-- <span class="card-date">June 14, 2022</span>
+            <a class="card-author" href="#0">by Author Doe</a> -->
+          </header>
+      
+          <div class="cadr-text-container">
+            <p>
+            Once upon a time, in an age before the Internet, the only way to meet people was to leave your home and interact with humanity.
+            </p>
+          </div>
+          
+        </div>
+      </article>
+      <article class="card news">
+        
+        <div class="card-image-container">
+          <img src="./sources/img/main/posts/news/Fitnes.jpg" class="card-image" alt="Девушка лежа на спине занимаеться фитнесом">
+        </div>
+        
+        <div class="card-container">
+          
+          <header class="card-header">        
+            <ul class="card-tags-list">
+              <li class="card-tags-list-item">
+                <a class="card-tags-link" href="#0">Новости</a>
+              </li>
+            </ul>
+            <h2 class="card-name">
+              <a class="card-name-link" href="#0">Новости Фитнеса</a>
+            </h2>
+            <!-- <span class="card-date">June 14, 2015</span>
+            <a class="card-author" href="#0">by Author Doe</a> -->
+          </header>
+      
+          <div class="cadr-text-container">
+            <p>
+          Once upon a time, in an age before the Internet, the only way to meet people was to leave your home and interact with humanity.  
+            </p>
+          </div>
+          
+        </div>
+      </article>
+      <article class="card news">
+        
+        <div class="card-image-container">
+          <img src="./sources/img/main/posts/news/Yoga study.jpg" class="card-image" alt="Две девушки на ковриках в позе свечи">
+        </div>
+        
+        <div class="card-container">
+          
+          <header class="card-header">        
+            <ul class="card-tags-list">
+              <li class="card-tags-list-item">
+                <a class="card-tags-link" href="#0">Новости</a>
+              </li>
+            </ul>
+            <h2 class="card-name">
+              <a class="card-name-link" href="#0">Новости клуба йоги</a>
+            </h2>
+            <!-- <span class="card-date">June 14, 2015</span>
+            <a class="card-author" href="#0">by Author Doe</a> -->
+          </header>
+      
+          <div class="cadr-text-container">
+            <p>
+           Considering how long the human race existed before online dating, it looks like meeting people in real life was really working for them.
+            </p>
+          </div>
+          
+        </div>
+      </article>
+      <article class="card news">
+        
+        <div class="card-image-container">
+          <img src="./sources/img/main/posts/news/Yoga Ball.jpg" class="card-image" alt="девушка лежит мостиком на надувном гимнастическом шаре">
+        </div>
+        
+        <div class="card-container">
+          
+          <header class="card-header">
+            <ul class="card-tags-list">
+              <li class="card-tags-list-item">
+                <a class="card-tags-link" href="#0">Новости</a>
+              </li>
+            </ul>
+            <h2 class="card-name">
+              <a class="card-name-link" href="#0">Наши новинки</a>
+            </h2>
+            <!-- <span class="card-date">June 14, 2015</span>
+            <a class="card-author" href="#0">by Author Doe</a> -->
+          </header>
+      
+          <div class="card-text-container">
+            <p>
+           Considering how long the human race existed before online dating, it looks like meeting people in real life was really working for them.
+            </p>
+          </div>
+          
+        </div>
+      </article>
+      <article class="card stocks">
+        
+        <!-- <div class="card-image-container">
+          <img src="https://netology-code.github.io/html-2-diploma/sources/images/last-post1.jpg" class="card-image" alt="Фигура человека, идущего вдоль пляжа">
+        </div> -->
+        
+        <div class="card-container">
+          
+          <header class="card-header">
+            <ul class="card-tags-list">
+              <li class="card-tags-list-item">
+                <a class="card-tags-link" href="#0" id="stocksId">Акции</a>
+              </li>
+              <!-- <li class="card-tags-list-item">
+                <a class="card-tags-link" href="#0">Health</a>
+              </li> -->
+            </ul>
+            <h2 class="card-name">
+              <a class="card-name-link" href="#0">Чем мы можем помочь тебе в достижении твоих целей</a>
+            </h2>
+            <!-- <span class="card-date">June 14, 2022</span>
+            <a class="card-author" href="#0">by Author Doe</a> -->
+          </header>
+      
+          <div class="cadr-text-container">
+            <p>
+            Once upon a time, in an age before the Internet, the only way to meet people was to leave your home and interact with humanity.  
+            </p>
+          </div>
+          
+        </div>
+      </article>
+      <article class="card location">
+        
+        <!-- <div class="card-image-container">
+          <img src="https://netology-code.github.io/html-2-diploma/sources/images/last-post1.jpg" class="card-image" alt="Фигура человека, идущего вдоль пляжа">
+        </div> -->
+        
+        <div class="card-container">
+          
+          <header class="card-header">
+            <ul class="card-tags-list">
+              <li class="card-tags-list-item">
+                <a class="card-tags-link" href="#0" id="locationId">Расположение</a>
+              </li>
+              <!-- <li class="card-tags-list-item">
+                <a class="card-tags-link" href="#0">Health</a>
+              </li> -->
+            </ul>
+            <h2 class="card-name">
+              <a class="card-name-link" href="#0">Вот где мы находимся</a>
+            </h2>
+            <!-- <span class="card-date">June 14, 2022</span>
+            <a class="card-author" href="#0">by Author Doe</a> -->
+          </header>
+      
+          <div class="cadr-text-container location">
+            <a class="location-text-link" href="https://2gis.kz/astana/inside/9570784863332071/firm/70000001067959880?m=71.406649%2C51.158787%2F18" target="_blank">
+              г.Астана, ул.Тараса Шевченко, дом 8/2, Бизнес-центр Aura  
+            </a>
+            <div class="card-image-location-container">
+              <img src="./sources/img/main/posts/location/map.jpeg" class="card-image-location" alt="Карта местности с указанием входа в бизнес центр Aura">
+              <img src="./sources/img/main/posts/location/Front.jpeg" class="card-image-location" alt="Фото здания бизнес центра Aura">
+              <img src="./sources/img/main/posts/location/Enter.jpeg" class="card-image-location" alt="Фото входа в зднаие бизнес центра Aura">
+            </div>
+          </div>
+          
+        </div>
+      </article>
+  </main>
+
+  <aside class="sidebar">
+    <section class="tags">
+      <h3 class="titles-section">Маркеры</h3>
+      <div class="tags-container">
+        <ul class="tags-list">
+          <li class="tags-list-item"><a href="#0" class="tag">Все</a></li>
+          <li class="tags-list-item"><a href="#0" class="tag">Наша миссия</a></li>
+          <li class="tags-list-item"><a href="#0" class="tag">Новости</a></li>
+          <li class="tags-list-item"><a href="#0" class="tag">Акции</a></li>
+          <li class="tags-list-item"><a href="#0" class="tag">Расположение</a></li>
+          <script>
+            const tagList = Array.from(document.querySelectorAll('.card-tags-link'))
+            const tags = document.querySelectorAll('.tag')
+            const choseTag = (e) => {
+              const activeRed = document.querySelectorAll('.red')
+              if (activeRed[0]) {
+                activeRed.forEach(item => item.classList.remove('red'))
+              }
+
+              const choseTagList = tagList.filter(item => item.textContent === e.target.textContent)
+              choseTagList.forEach(item => item.closest('.card').classList.add('red'))
+            }
+            tags.forEach(item => item.addEventListener('click', choseTag))
+          </script>
+          <!-- <li class="tags-list-item"><a href="#0" class="tag">ipsum tag</a></li>
+          <li class="tags-list-item"><a href="#0" class="tag">travel</a></li>
+          <li class="tags-list-item"><a href="#0" class="tag">fashion</a></li>
+          <li class="tags-list-item"><a href="#0" class="tag">music</a></li> -->
+        </ul>
+      </div>
+    </section>
+    <section class="aside-section">
+      <h3 class="titles-section">Полезные ссылки</h3>
+      
+      <div class="aside-card-container">
+        
+        <div class="aside-card-image-container">
+          <img src="./sources/img/sidbar/right link/yoga lettle.webp" class="aside-card-image" alt="Фигура девушки в черном цвете, занимающейся йогой">
+        </div>
+        
+        <div class="aside-card-text">
+          <a class="aside-card-link" href="https://dzen.ru/a/XsLDgZ38dhuaQHeT" target="_blank">Йога для начинающих</a>
+        </div>
+        
+      </div>
+      
+      <div class="aside-card-container">
+        
+        <div class="aside-card-image-container">
+          <img src="./sources/img/sidbar/right link/dance lettle 2.gif" class="aside-card-image" alt="Фигура девушки в черном цвете, занимающейся танцами">
+        </div>
+        
+        <div class="aside-card-text">
+          <a class="aside-card-link" href="https://dzen.ru/a/XAYm6iGlnwQWgNLr" target="_blank">Танцы для начинающих</a>
+        </div>
+        
+      </div>
+      
+      <div class="aside-card-container">
+        
+        <div class="aside-card-image-container">
+          <img src="./sources/img/sidbar/right link/Right eating.png" class="aside-card-image" alt="рисунок вилки, тарелки с едой, ложки">
+        </div>
+        
+        <div class="aside-card-text">
+          <a class="aside-card-link" href="https://style.rbc.ru/health/601c3aad9a79473506f6a910" target="_blank">Правильное питание</a>
+        </div>
+        
+      </div>
+    </section>
+  
+    <section class="search-box">
+      <h3 class="titles-search">Поиск</h3>
+      <form class="search">
+        <label class="desc-field">
+          <span class="form-caption">Поиск по сайту</span>
+          <input class="field-search" type="search" placeholder="Найти...">
+        </label>
+        <button class="button-search" type="submit">
+          <span class="form-caption">Кнопка поиска</span>
+        </button>
+      </form>
+    </section>
+    
+    <section class="subscription-box">
+      <form class="subscription">
+        <h3 class="titles-section">Подписаться на рассылку</h3>
+        <label class="desc-field">
+          <span class="form-caption">Новостная рассылка</span>
+          <input class="field-email" type="email"  placeholder="Ваш почтовый ящик" required>
+        </label>
+        <button class="button" type="submit">Подписаться</button>
+      </form>
+    </section>
+      
+    <!-- <section class="categories">
+      <h3 class="titles-section">categories</h3>
+      <ul class="categories-list">
+        <li class="categories-list-item">
+          <a class="categories-link" href="#0">Beauty</a>
+          <span class="categories-number">12</span>
+        </li>
+        <li class="categories-list-item">
+          <a class="categories-link" href="#0">Health</a>
+          <span class="categories-number">4</span>
+        </li>
+        <li class="categories-list-item">
+          <a class="categories-link" href="#0">Lifstyle</a>
+          <span class="categories-number">145</span>
+        </li>
+        <li class="categories-list-item">
+          <a class="categories-link" href="#0">Music</a>
+          <span class="categories-number">28</span>
+        </li>
+        <li class="categories-list-item">
+          <a class="categories-link" href="#0">Sport</a>
+          <span class="categories-number">62</span>
+        </li>
+        <li class="categories-list-item">
+          <a class="categories-link" href="#0">Yoga</a>
+          <span class="categories-number">8</span>
+        </li>
+      </ul>
+    </section> -->
+
+    <section class="aside-section">
+      <h3 class="titles-section">Наши партнеры</h3>
+
+      <div class="aside-card-container partners">
+        
+        <div class="aside-card-image-container">
+          <a class="aside-card-link" href="https://1fit.app" target="_blank">
+            <img src="./sources/img/sidbar/partners/1fit.svg" class="aside-card-image" alt="Логотип 1-Fit">
+          </a>
+        </div>
+        
+      </div>
+      
+    </section>
+  </aside>
+</div>
+      
+<footer class="footer">
+  <address class="socials">
+    <ul class="socials-list">
+      <li class="socials-list-item">
+        <a class="socials-link socials-link-instagram" href="#0">
+          <span class="socials-link-text">instagram</span>
+        </a>
+      </li>
+      <li class="socials-list-item">
+        <a class="socials-link socials-link-watsup" href="#0">
+          <span class="socials-link-text">watsup</span>
+        </a>
+      </li>
+      <li class="socials-list-item">
+        <a class="socials-link socials-link-telegram" href="#0">
+          <span class="socials-link-text">telegram</span>
+        </a>
+      </li>
+      <!-- <li class="socials-list-item">
+        <a class="socials-link socials-link-instagram" href="#0">
+          <span class="socials-link-text">instagram</span>
+        </a>
+      </li>
+      <li class="socials-list-item ">
+        <a class="socials-link socials-link-tumblr" href="#0">
+          <span class="socials-link-text">tumblr</span>
+        </a>
+      </li> -->
+    </ul>
+  </address>
+  <a class="copyright" href="https://taplink.cc/alexwebart" target="_blank">Copyright © 2023 Developed by AlexWebArt</a>
+</footer>
+</body>
